@@ -1,0 +1,128 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color run --machine --device-id=4B7E0732-C067-472B-A63E-B3593E34E461 lib/main.dart
+
+## exception
+
+YamlException: Error on line 44, column 5: Expected a key while parsing a block mapping.
+    assets:
+    ^
+
+```
+#0      Parser._parseBlockMappingKey (package:yaml/src/parser.dart:448:5)
+#1      Parser._stateMachine (package:yaml/src/parser.dart:86:16)
+#2      Parser.parse (package:yaml/src/parser.dart:47:19)
+#3      Loader._loadMapping (package:yaml/src/loader.dart:171:23)
+#4      Loader._loadNode (package:yaml/src/loader.dart:86:16)
+#5      Loader._loadMapping (package:yaml/src/loader.dart:165:19)
+#6      Loader._loadNode (package:yaml/src/loader.dart:86:16)
+#7      Loader._loadDocument (package:yaml/src/loader.dart:62:20)
+#8      Loader.load (package:yaml/src/loader.dart:54:20)
+#9      loadYamlDocument (package:yaml/yaml.dart:51:25)
+#10     loadYamlNode (package:yaml/yaml.dart:42:5)
+#11     loadYaml (package:yaml/yaml.dart:34:5)
+#12     FlutterManifest.createFromString (package:flutter_tools/src/flutter_manifest.dart:42:28)
+<asynchronous suspension>
+#13     FlutterManifest.createFromPath (package:flutter_tools/src/flutter_manifest.dart:36:12)
+<asynchronous suspension>
+#14     FlutterProject._readManifest (package:flutter_tools/src/project.dart:128:60)
+<asynchronous suspension>
+#15     FlutterProject.fromDirectory (package:flutter_tools/src/project.dart:42:44)
+<asynchronous suspension>
+#16     FlutterProject.current (package:flutter_tools/src/project.dart:53:46)
+#17     FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:359:59)
+<asynchronous suspension>
+#18     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:306:33)
+<asynchronous suspension>
+#19     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:142:29)
+<asynchronous suspension>
+#20     _rootRun (dart:async/zone.dart:1124:13)
+#21     _CustomZone.run (dart:async/zone.dart:1021:19)
+#22     _runZoned (dart:async/zone.dart:1516:10)
+#23     runZoned (dart:async/zone.dart:1463:12)
+#24     AppContext.run (package:flutter_tools/src/base/context.dart:141:18)
+<asynchronous suspension>
+#25     FlutterCommand.run (package:flutter_tools/src/runner/flutter_command.dart:297:20)
+#26     CommandRunner.runCommand (package:args/command_runner.dart:194:27)
+<asynchronous suspension>
+#27     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:347:21)
+<asynchronous suspension>
+#28     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:142:29)
+<asynchronous suspension>
+#29     _rootRun (dart:async/zone.dart:1124:13)
+#30     _CustomZone.run (dart:async/zone.dart:1021:19)
+#31     _runZoned (dart:async/zone.dart:1516:10)
+#32     runZoned (dart:async/zone.dart:1463:12)
+#33     AppContext.run (package:flutter_tools/src/base/context.dart:141:18)
+<asynchronous suspension>
+#34     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:303:19)
+<asynchronous suspension>
+#35     CommandRunner.run.<anonymous closure> (package:args/command_runner.dart:109:29)
+#36     new Future.sync (dart:async/future.dart:224:31)
+#37     CommandRunner.run (package:args/command_runner.dart:109:11)
+#38     FlutterCommandRunner.run (package:flutter_tools/src/runner/flutter_command_runner.dart:211:18)
+#39     run.<anonymous closure> (package:flutter_tools/runner.dart:59:20)
+<asynchronous suspension>
+#40     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:142:29)
+<asynchronous suspension>
+#41     _rootRun (dart:async/zone.dart:1124:13)
+#42     _CustomZone.run (dart:async/zone.dart:1021:19)
+#43     _runZoned (dart:async/zone.dart:1516:10)
+#44     runZoned (dart:async/zone.dart:1463:12)
+#45     AppContext.run (package:flutter_tools/src/base/context.dart:141:18)
+<asynchronous suspension>
+#46     runInContext (package:flutter_tools/src/context_runner.dart:42:24)
+<asynchronous suspension>
+#47     run (package:flutter_tools/runner.dart:50:10)
+#48     main (package:flutter_tools/executable.dart:52:9)
+<asynchronous suspension>
+#49     main (file:///b/build/slave/Mac_Flutter_Packaging/build/archive/flutter/packages/flutter_tools/bin/flutter_tools.dart:8:3)
+#50     _startIsolate.<anonymous closure> (dart:isolate/runtime/libisolate_patch.dart:287:32)
+#51     _RawReceivePortImpl._handleMessage (dart:isolate/runtime/libisolate_patch.dart:171:12)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel beta, v0.8.2, on Mac OS X 10.13.6 17G65, locale en-US)
+    • Flutter version 0.8.2 at /flutter
+    • Framework revision 5ab9e70727 (4 weeks ago), 2018-09-07 12:33:05 -0700
+    • Engine revision 58a1894a1c
+    • Dart version 2.1.0-dev.3.1.flutter-760a9690c2
+
+[✓] Android toolchain - develop for Android devices (Android SDK 28.0.2)
+    • Android SDK at /Users/muhammed/Library/Android/sdk
+    • Android NDK location not configured (optional; useful for native profiling support)
+    • Platform android-28, build-tools 28.0.2
+    • Java binary at: /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b01)
+    • All Android licenses accepted.
+
+[✓] iOS toolchain - develop for iOS devices (Xcode 10.0)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Xcode 10.0, Build version 10A255
+    • ios-deploy 2.0.0
+    • CocoaPods version 1.5.3
+
+[✓] Android Studio (version 3.1)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin version 28.0.1
+    • Dart plugin version 173.4700
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b01)
+
+[✓] IntelliJ IDEA Community Edition (version 2018.2.2)
+    • IntelliJ at /Applications/IntelliJ IDEA CE.app
+    • Flutter plugin version 28.0.4
+    • Dart plugin version 182.4129.13
+
+[✓] VS Code (version 1.27.2)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Flutter extension version 2.19.0
+
+[✓] Connected devices (1 available)
+    • iPhone XS Max • 4B7E0732-C067-472B-A63E-B3593E34E461 • ios • iOS 12.0 (simulator)
+
+• No issues found!
+```
